@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: linear-gradient(to right, #2193b0, #6dd5ed);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .box {
+            background: white;
+            padding: 30px;
+            width: 350px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: red;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h2>Welcome {{ role }}</h2>
+
+    {% if role == "admin" %}
+        <p>🔐 You have Admin Access</p>
+    {% else %}
+        <p>👤 Logged in as User</p>
+    {% endif %}
+
+    <a href="/logout">Logout</a>
+</div>
+
+</body>
+</html>
